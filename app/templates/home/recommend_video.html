@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>托福培训</title>
+
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap-movie.css')}}">
+      <script type="text/javascript" src="{{url_for('static',filename='bootstrap.min.js')}}"></script>
+        <style>
+        .navbar-brand>img {
+            display: inline;
+        }
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+        .media{
+            padding:3px;
+            border:1px solid #ccc
+        }
+    </style>
+</head>
+
+<body>
+<!--导航-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{url_for('home.index',page=1)}}" class="navbar-brand" style="width:250px;">
+            <img src="{{url_for('static',filename='bj2.jpg')}}" style="height:45px; width:50px">&nbsp;爱健身
+            </a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-left" role="search" style="margin-top:18px;">
+                <div class="form-group input-group">
+                    <input type="text" class="form-control" placeholder="请输入视频名称！" id="key_movie">
+                    <span class="input-group-btn">
+                        <a class="btn btn-default" id="do_search" ><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</a>
+                    </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="curlink" href="{{url_for('home.index',page=1)}}"><span class="glyphicon glyphicon-film"></span>&nbsp;首页</a>
+                </li>
+                 <li>
+                    <a class="curlink" href="{{url_for('home.recommend_user',page=1)}}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;推荐用户</a>
+                </li>
+                 <li>
+                    <a class="curlink" href="{{url_for('home.recommend_video')}}"><span class="glyphicon glyphicon-facetime-video"></span>推荐课程</a>
+                </li>
+                <li>
+                    <a class="curlink" href="{{url_for('home.login')}}"><span class="glyphicon glyphicon-log-in"></span>登录</a>
+                </li>
+{#                <li>#}
+{#                    <a class="curlink" href="{{url_for('home.register')}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;注册</a>#}
+{#                </li>#}
+                <li>
+                    <a class="curlink" href="{{url_for('home.logout')}}"><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+                </li>
+                <li>
+                    <a class="curlink" href="{{url_for('home.center')}}"><span class="glyphicon glyphicon-user"></span>&nbsp;个人中心</a>
+                </li>
+            </ul>
+        </div>
+        <!--导航-->
+    </div>
+</nav>
+<div class="container" style="margin-top:18px">
+<div class="panel panel-danger" style="margin-top: 60px">
+           <div class="panel-heading">
+                 <h3 class="panel-title"><span class="glyphicon glyphicon-facetime-video"></span>&nbsp;推荐教学视频</h3>
+           </div>
+           <div class="panel-body">
+                <h4 style="font-weight: bold; font-size: small; color: #1b6d85 ">为您推荐以下视频（基于您的关注，收藏记录）</h4>
+              <hr style="border:1px dotted #036" />
+           {% if data2 %}
+               <div class="col-md-12">
+                    {% for v in data2 %}
+                   <div class="media">
+                           <div class="media-left">
+                       <a>
+                                    <i class="avatar size-L radius">
+                                        {% if v.iurl %}
+                                            <img alt="100x100"
+                                                 src="{{url_for('static',filename='video_image/'+v.iurl) }}"
+                                                 style="border:1px solid #abcdef;width:120px;">
+                                        {% else %}
+                                            <img alt="50x50" src="{{url_for('static',filename='barcelona.jpg')}}" class="img-circle"
+                                                 style="border:1px solid #abcdef;width:50px;">
+                                        {% endif %}
+                                    </i>
+                                </a>
+                          </div>
+                    <div class="media-body" >
+                           <h4 class="media-heading" style="font-weight: bold; margin-top: 4px">{{ v.name }}
+                               <a class="label label-danger pull-right" id="11" href="{{url_for('home.video22',id=v.id,page=1)}}"><span
+                                        class="glyphicon glyphicon-play"></span>观看视频</a>
+                           </h4>
+                          <div style="margin-top: 5px; margin-bottom: 3px">
+                              <span class="glyphicon glyphicon-play-circle" style="color:#000000;margin-bottom: 6px">播放:{{v.watch_num}}</span>
+                          <span class="glyphicon glyphicon-heart" style="color:#5b697a;margin-left: 15px">收藏:{{v.collect_num}}</span>
+                            <span class="glyphicon glyphicon-comment" style="color:#2b542c;margin-left: 15px">评论:{{ v.comment_num }}</span>
+
+                          </div>
+                       视频简介: {{ v.info }}
+                     <div class="col-md-12" style="padding-left: 2px; margin-top: 3px">
+        <p style="color:green;font-size: 15px" id="show_col_msg22"></p>
+                           </div>
+                      </div>
+                   </div>
+                {% endfor %}
+               </div>
+           {% else %}
+           <div class="well well-lg">暂时没有推荐</div>
+           {% endif %}
+</div>
+</div>
+</div>
+
+</body>
+</html>

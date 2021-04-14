@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<title>出国留学培训中心</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body>
+<!--轮播图 开始 -->
+<div class="main_banner">
+	<div class="main_banner_wrap">
+		<canvas id="myCanvas" width="150" height="150"></canvas>
+		<div class="main_banner_box" id="m_box">
+			<a href="javascript:void(0)" class="banner_btn js_pre">
+				<span class="banner_btn_arrow"><i></i></span>
+			</a>
+			<a href="javascript:void(0)" class="banner_btn btn_next js_next">
+				<span class="banner_btn_arrow"><i></i></span>
+			</a>
+			<ul>
+				<li id="imgCard0">
+					<a href=""><span style="opacity:0;"></span></a>
+					<img src="{{url_for('static',filename='haha.jpg')}}" alt="">
+					<p style="bottom:0">如何防止口语首考遭到暴击？</p>
+				</li>
+				<li id="imgCard1">
+					<a href=""><span style="opacity:0.4;"></span></a>
+					<img src="{{url_for('static',filename='haha1.jpg')}}" alt="">
+					<p>怕口语？无老师带你暴击口语</p>
+				</li>
+				<li id="imgCard2">
+					<a href=""><span style="opacity:0.4;" ></span></a>
+					<img src="{{url_for('static',filename='aa2.jpg')}}" alt="">
+					<p>听力男神的课不想听吗？</p>
+				</li>
+				<li id="imgCard3">
+					<a href=""><span style="opacity:0.4;"></span></a>
+					<img src="{{url_for('static',filename='ww.jpg')}}" alt="">
+					<p>写作男神四年心血结晶</p>
+				</li>
+				<li id="imgCard4">
+					<a href=""><span style="opacity:0.4;"></span></a>
+					<img src="{{url_for('static',filename='aaaa.jpg')}}" alt="">
+					<p>阅读不拿满分还考什么托福呢？</p>
+				</li>
+			</ul>
+			<!--火狐倒影图层-->
+			<p id="rflt"></p>
+			<!--火狐倒影图层-->
+		</div>
+		<!--序列号按钮-->
+		<div class="btn_list">
+			<span class="curr"></span><span></span><span></span><span></span><span></span>
+		</div>
+	</div>
+
+</div>
+<!--轮播图 结束 -->
+
+<script type="text/javascript" src="{{url_for('static',filename='jquery.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static',filename='script.js')}}"></script>
+
+</body>

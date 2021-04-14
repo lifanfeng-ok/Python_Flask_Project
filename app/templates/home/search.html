@@ -1,0 +1,137 @@
+{% import "home/search_page.html" as pg %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>托福培训</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap-movie.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='animate.css')}}">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        .navbar-brand>img {
+            display: inline;
+        }
+
+    </style>
+    <style>
+        .media{
+            padding:3px;
+            border:1px solid #ccc
+        }
+
+    </style>
+</head>
+
+<body>
+<!--导航-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{url_for('home.index',page=1)}}" class="navbar-brand" style="width:250px;">
+<img src="{{url_for('static',filename='bj2.jpg')}}" style="height:45px; width:50px">爱健身
+            </a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-left" role="search" style="margin-top:18px;">
+                <div class="form-group input-group">
+                    <input type="text" class="form-control" placeholder="请输入视频名称！" id="key_movie">
+                    <span class="input-group-btn">
+                        <a class="btn btn-default" id="do_search"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</a>
+                    </span>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                 <li>
+                    <a class="curlink" href="{{url_for('home.index',page=1)}}"><span class="glyphicon glyphicon-film"></span>&nbsp;首页</a>
+                </li>
+                   <li>
+                    <a class="curlink" href="{{url_for('home.recommend_user',page=1)}}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;推荐用户</a>
+                </li>
+                 <li>
+                    <a class="curlink" href="{{url_for('home.recommend_video')}}"><span class="glyphicon glyphicon-facetime-video"></span>推荐课程</a>
+                </li>
+                 <li>
+                    <a class="curlink" href="{{url_for('home.login')}}"><span class="glyphicon glyphicon-log-in"></span>登录</a>
+                </li>
+{#                <li>#}
+{#                    <a class="curlink" href="{{url_for('home.register')}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;注册</a>#}
+{#                </li>#}
+                <li>
+                    <a class="curlink" href="{{url_for('home.logout')}}"><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+                </li>
+                <li>
+                    <a class="curlink" href="{{url_for('home.center')}}"><span class="glyphicon glyphicon-user"></span>个人中心</a>
+                </li>
+            </ul>
+        </div>
+        <!--导航-->
+
+    </div>
+</nav>
+<!--导航-->
+<!--内容-->
+<div class="container" style="margin-top:76px">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb" style="margin-top:6px;">
+                <li>与"{{key}}"有关的视频，共{{ video_count }}部</li>
+            </ol>
+        </div>
+        {% for i in data.items %}
+        <div class="col-md-12">
+
+            <div class="media">
+                <div class="media-left">
+                    <a href="{{url_for('home.video22',id=i.id,page=1)}}">
+{#                        <img class="media-object" src="{{url_for('static',filename='tofel.png')}}" alt="视频">#}
+                        <img src="{{url_for('static',filename='video_image/'+i.iurl)}}" class="media-object" alt=""
+                        style='width:131px;height:83px;'>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading" style="font-weight: bold">{{i.name}}<a href="{{url_for('home.video22',id=i.id,page=1)}}" class="label label-primary pull-right"><span class="glyphicon glyphicon-play"></span>播放视频</a></h4>
+                    {{i.info}}
+                </div>
+            </div>
+
+        </div> {% endfor %}
+    </div>
+<div class="col-md-12 text-center">
+            {{ pg.page(data,'home.search') }}
+        </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    ©&nbsp;2019&nbsp;let's learn English. ALL rights reserved&nbsp;京ICP备 13046644号-2
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">  $(document).ready(function(){
+    $("#do_search").click(function(){
+        var key=$("#key_movie").val();
+        location.href="{{ url_for('home.search',page=1)}}?key="+ key;
+    })
+});
+</script>
+</body>
