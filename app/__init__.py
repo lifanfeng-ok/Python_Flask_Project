@@ -14,7 +14,8 @@ app.debug=True
 bootstrap = Bootstrap(app)
 db=SQLAlchemy(app)
 app.config['REDIS_URL'] = "redis://localhost:6379/1"
-app.config["UP_DIR"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/uploads/")
+app.config["UP_DIR"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/video/")
+app.config["DOWN_DIR"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/video_image/")
 app.config["FC_DIR"] = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static/uploads/users/")
 rd = FlaskRedis(app)
 from app.home import home as home_blueprint

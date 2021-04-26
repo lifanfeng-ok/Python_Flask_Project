@@ -172,6 +172,10 @@ class Admini(db.Model):
     def __repr__(self):
         return "<Admini %r>" % self.id
 
+    def check_pwd(self, password):
+        from werkzeug.security import check_password_hash
+        return check_password_hash(self.password, password)
+
 #
 # class Userlog(db.Model):
 #     __tablename__='userlog'

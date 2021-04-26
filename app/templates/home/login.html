@@ -23,7 +23,7 @@
         <div class="col-lg-4 col-offset-4 m-t-large">
           <section class="panel">
             <header class="panel-heading text-center">
-              登录考试系统
+              登录系统
             </header>
             <form method="post" class="padder">
                 {{ form.csrf_token }}
@@ -64,7 +64,7 @@
     </div>
     {%endfor%}
               <div class="line line-dashed"></div>
-              <a href="#" class="btn btn-twitter btn-block">
+              <a href="{{url_for('admini.login')}}" class="btn btn-twitter btn-block">
                   <span class="glyphicon glyphicon-user" style="float: left" aria-hidden="true"></span>管理员登录</a>
               <div class="line line-dashed"></div>
               <p class="text-muted text-center"><small>没有账号?</small></p>

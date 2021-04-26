@@ -10,6 +10,7 @@
     <orderEntry type="jdk" jdkName="Python 3.8 (toefl)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="hls" level="application" />
+    <orderEntry type="library" name="holder" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
