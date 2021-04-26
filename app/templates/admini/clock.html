@@ -1,0 +1,84 @@
+{% extends 'admini/admin.html' %}
+
+{% block content %}
+        <!--内容-->
+        <section class="content-header">
+            <h1>后台管理系统</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">打卡看板</li>
+            </ol>
+        </section>
+        <section class="content" id="showcontent">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">打卡类型分布图</h3>
+                        </div>
+                        <div class="box-body" id="meminfo" style="height:500px;"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box box-primary">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">打卡排行榜</h3>
+                        </div>
+                    <table class="table table-hover" style="height: 500px">
+                            <tbody>
+                            <tr>
+                                <th>编号</th>
+                                <th>用户</th>
+                                <th>打卡天数</th>
+                            </tr>
+                            {% for v in user %}
+                                <tr>
+                                    <td>{{ v.id }}</td>
+                                    <td>{{ v.username }}</td>
+                                    <td>{{ v.clock_num }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--内容-->
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static',filename='js/echarts.min.js') }}"></script>
+    <script>
+    var myChart = echarts.init(document.getElementById('meminfo'));
+    myChart.setOption({
+           title: {
+            text: '用户打卡类型分布图',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+    series : [
+        {
+            name: '打卡类型',
+            type: 'pie',    // 设置图表类型为饼图
+            radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+            data:[          // 数据数组，name 为数据项名称，value 为数据项值
+                {value: {{ sit_up}}, name:'仰卧起坐'},
+                {value:{{ squat }}, name:'深蹲'},
+                {value:{{ other }}, name:'其他'}
+            ]
+        }
+    ]
+})
+
+</script>
+    <script>
+    $(document).ready(function(){
+        $("#g-1").addClass("active");
+        $("#g-1-2").addClass("active");
+    });
+</script>
+{% endblock %}
