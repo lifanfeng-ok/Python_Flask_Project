@@ -571,7 +571,7 @@ def register():
         password = request.form.get('password')
         phone = request.form.get('phone')
         if len(UserInfo.query.filter(UserInfo.username == stuname).all()) > 0:
-            flash("该用户名已经注册账号")
+            flash("该账号已被注册")
         else:
             new_user = UserInfo(
                 username=stuname,
@@ -694,7 +694,7 @@ def comments(page=None):
     ).filter(video.id == Comment.video_id, UserInfo.user_id == user.user_id).order_by(Comment.addtime.desc())
     if page == None:
         page = 1
-    data = data.paginate(page=page, per_page=5)
+    data = data.paginate(page=page, per_page=4)
     return render_template("home/comments.html", data=data)
 
 

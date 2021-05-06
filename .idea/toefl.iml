@@ -11,6 +11,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="hls" level="application" />
     <orderEntry type="library" name="holder" level="application" />
+    <orderEntry type="library" name="messages_zh" level="application" />
+    <orderEntry type="library" name="jquery.validate" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
