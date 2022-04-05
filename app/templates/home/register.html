@@ -32,7 +32,7 @@
         <div class="col-lg-4 col-offset-4 m-t-large">
           <section class="panel">
             <header class="panel-heading text-center">
-              学生注册
+              注册
             </header>
             <form method="post" class="padder" id="form1">
 {#              <div class="block">#}
@@ -42,28 +42,28 @@
 {#                      <input id="number" name="number" type="text" class="form-control" placeholder="请输入学号">#}
 {#              </div>#}
               <div class="block">
-                <label class="control-label">用户名:</label>
+                <label class="control-label" for="stuname">用户名:</label>
 {#                <input type="password" id="inputPassword" placeholder="Password" class="form-control">#}
 {#                  {{ form.password(id="inputPassword",class="form-control") }}#}
                       <input id="stuname" name="stuname" type="text" class="form-control" placeholder="请输入用户名">
               </div>
             <div class="block" style="margin-bottom: 0px">
-                <label class="control-label">性别:</label>
-                <input  type="radio" name="sex" value="男" style="margin-left: 10px"><span style="font-size: 14px">
+                <label class="control-label" for="sex">性别:</label>
+                <input  id="sex" type="radio" name="sex" value="男" style="margin-left: 10px"><span style="font-size: 14px">
                 男</span>
-                <input type="radio" name="sex" value="女" style="margin-left: 10px"><span style="font-size: 14px">
+                <input id="sex" type="radio" name="sex" value="女" style="margin-left: 10px"><span style="font-size: 14px">
                 女</span>
             </div>
             <div class="block">
-                <label class="control-label">密码:</label>
+                <label class="control-label" for="password">密码:</label>
                 <input id="password" name="password" type="password" class="form-control" placeholder="请输入密码">
             </div>
             <div class="block">
-                <label class="control-label">再次输入密码:</label>
+                <label class="control-label" for="repassword">再次输入密码:</label>
                 <input id="repassword" name="repassword" type="password" class="form-control" placeholder="请再次输入密码">
             </div>
             <div class="block">
-                <label  class="control-label">手机号:</label>
+                <label  class="control-label" for="phone">手机号:</label>
                 <input id="phone" name="phone" type="text" class="form-control" placeholder="请输入手机号">
             </div>
 {#              <button type="submit" class="btn btn-info">登录</button>#}

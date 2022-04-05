@@ -145,7 +145,8 @@ def android_getnotice():
 @home.route("/android_getcomment/", methods=['GET', 'POST'])
 def android_getcomment():
     video_id = request.args.get('id')
-    com = Comment.query.filter(Comment.video_id == video_id)
+    com = Comment.query.filter(Comment.video_id == video_id).order_by(
+        Comment.addtime.desc())
     comment_list = []
     for item in com:
         user = UserInfo.query.filter(UserInfo.user_id == item.user_id).first()
