@@ -1,5 +1,26 @@
 # Python_Flask_Project
 
+
+Web 端共包含 4 个模块，分别是登录注册模块、个人中心模块、教学视频模块以及社交模块
+![image](https://user-images.githubusercontent.com/74596877/164987675-96b103da-87c1-46f7-a2a9-c1676869f538.png)
+
+
+推荐好友、视频时的相关算法：
+![image](https://user-images.githubusercontent.com/74596877/164987870-addaadbc-72aa-45e7-914c-58e3c74e5c89.png)
+![image](https://user-images.githubusercontent.com/74596877/164987884-ee2ab54c-480e-49eb-b4a4-8027b27d2e6f.png)
+
+
+/****************************************************************************/
+![image](https://user-images.githubusercontent.com/74596877/164987844-6194643b-f82f-485f-a0a2-6b7c540c4eeb.png)
+![image](https://user-images.githubusercontent.com/74596877/164987854-9212696f-716d-46b6-a15a-49bbacf1a4cb.png)
+
+
+
+
+App地址： https://github.com/lifanfeng-ok/Community_APP
+
+
+
 <img width="437" alt="image" src="https://user-images.githubusercontent.com/74596877/161690373-01e89d3b-617c-4650-8399-0002cf69987c.png">
 {******************************************************************}
 
