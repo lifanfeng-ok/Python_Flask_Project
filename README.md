@@ -7,11 +7,15 @@ Web 端共包含 4 个模块，分别是登录注册模块、个人中心模块�
 
 
 推荐好友、视频时的相关算法：
-![image](https://user-images.githubusercontent.com/74596877/164987870-addaadbc-72aa-45e7-914c-58e3c74e5c89.png)![image](https://user-images.githubusercontent.com/74596877/164987884-ee2ab54c-480e-49eb-b4a4-8027b27d2e6f.png)
+![image](https://user-images.githubusercontent.com/74596877/164987870-addaadbc-72aa-45e7-914c-58e3c74e5c89.png)
+![image](https://user-images.githubusercontent.com/74596877/164988037-5aa4b1a4-d32b-4024-a5b3-3444227a5d72.png)
+
 
 
 /****************************************************************************/
-![image](https://user-images.githubusercontent.com/74596877/164987844-6194643b-f82f-485f-a0a2-6b7c540c4eeb.png)![image](https://user-images.githubusercontent.com/74596877/164987854-9212696f-716d-46b6-a15a-49bbacf1a4cb.png)
+![image](https://user-images.githubusercontent.com/74596877/164987844-6194643b-f82f-485f-a0a2-6b7c540c4eeb.png)
+![image](https://user-images.githubusercontent.com/74596877/164988044-552e0047-e698-48b1-8094-2f0ada8552c7.png)
+
 
 
 
