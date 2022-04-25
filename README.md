@@ -2,7 +2,7 @@
 
 App地址： https://github.com/lifanfeng-ok/Community_APP
 
-Web 端共包含 4 个模块，分别是登录注册模块、个人中心模块、教学视频模块以及社交模块
+Web 端共包含 4 个模块，分别是`登录注册模块`、`个人中心模块`、`教学视频模块`以及`社交模块`
 ![image](https://user-images.githubusercontent.com/74596877/164987675-96b103da-87c1-46f7-a2a9-c1676869f538.png)
 
 
